@@ -726,7 +726,17 @@ fbq('track', 'PageView');
             const profession = document.getElementById('lf-profession').value;
             const language = document.getElementById('lf-language').value;
             
-            const message = `Hi Tarannum, I want to start my journey. Name: ${name}, Age: ${age}, WhatsApp: ${whatsapp}, Profession: ${profession}, Language: ${language}`;
+            const message = const message = `Hi Tarannum,
+
+I want to start my journey.
+
+Name: ${name}
+Age: ${age}
+WhatsApp: ${whatsapp}
+Profession: ${profession}
+Preferred Language: ${language}
+
+Please share the complete details and guide me further.`;
             const encodedMessage = encodeURIComponent(message);
             
             fbq('track', 'Lead');
