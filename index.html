@@ -632,6 +632,26 @@ src="https://www.facebook.com/tr?id=2825444804484849&ev=PageView&noscript=1"/>
 <div>
 <label class="block font-label-bold text-on-surface mb-1" for="lf-whatsapp">WhatsApp Number</label>
 <input class="w-full bg-white/70 border border-outline-variant/30 focus:border-secondary focus:ring-2 focus:ring-secondary/30 rounded-xl px-4 py-3 text-on-surface font-body-md transition-all shadow-inner" id="lf-whatsapp" required="" type="tel"/>
+</div><div>
+<label class="block font-label-bold text-on-surface mb-1" for="lf-profession">Profession</label>
+<select class="w-full bg-white/70 border border-outline-variant/30 focus:border-secondary focus:ring-2 focus:ring-secondary/30 rounded-xl px-4 py-3 text-on-surface font-body-md transition-all appearance-none shadow-inner" id="lf-profession" required="">
+<option disabled="" selected="" value="">Select Profession</option>
+<option value="Student">Student</option>
+<option value="Housewife">Housewife</option>
+<option value="Job">Job</option>
+<option value="Business">Business</option>
+<option value="Other">Other</option>
+</select>
+</div>
+
+<div>
+<label class="block font-label-bold text-on-surface mb-1" for="lf-gender">Gender</label>
+<select class="w-full bg-white/70 border border-outline-variant/30 focus:border-secondary focus:ring-2 focus:ring-secondary/30 rounded-xl px-4 py-3 text-on-surface font-body-md transition-all appearance-none shadow-inner" id="lf-gender" required="">
+<option disabled="" selected="" value="">Select Gender</option>
+<option value="Female">Female</option>
+<option value="Male">Male</option>
+<option value="Other">Other</option>
+</select>
 </div>
 <div>
 <label class="block font-label-bold text-on-surface mb-1" for="lf-language">Preferred Language</label>
@@ -705,6 +725,8 @@ src="https://www.facebook.com/tr?id=2825444804484849&ev=PageView&noscript=1"/>
     const name = document.getElementById('lf-name').value;
     const age = document.getElementById('lf-age').value;
     const whatsapp = document.getElementById('lf-whatsapp').value;
+    const profession = document.getElementById('lf-profession').value;
+    const gender = document.getElementById('lf-gender').value;
     const language = document.getElementById('lf-language').value;
 
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwmlcyNxYuoamDKi8FhIgvxdmPpkc_ixGWPWs53x4YaOr56OSrisfW9DQt2kXfaD7hOeg/exec';
@@ -734,6 +756,8 @@ I want to start my journey.
 Name: ${name}
 Age: ${age}
 WhatsApp Number: ${whatsapp}
+Profession: ${profession}
+Gender: ${gender}
 Language: ${language}
 
 Please share the complete details and guide me further.`;
