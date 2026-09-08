@@ -732,12 +732,13 @@ src="https://www.facebook.com/tr?id=2825444804484849&ev=PageView&noscript=1"/>
     const scriptURL = 'https://script.google.com/macros/s/AKfycbxKv7iyYIzMrWl8SdA3qDU5bggxqT7-k6PV1q_w34imQdztAamid11_gyQAgk5ZmqyyWw/exec';
     const formData = new URLSearchParams();
 
-    formData.append('name', name);
-    formData.append('age', age);
-    formData.append('whatsapp', whatsapp);
-    formData.append('language', language);
-    formData.append('source', 'Website');
-
+   formData.append('name', name);
+formData.append('age', age);
+formData.append('whatsapp', whatsapp);
+formData.append('profession', profession);
+formData.append('gender', gender);
+formData.append('language', language);
+formData.append('source', 'Website');
     try {
         await fetch(scriptURL, {
             method: 'POST',
