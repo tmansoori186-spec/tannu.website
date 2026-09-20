@@ -793,7 +793,7 @@ Please share the complete details and guide me further.`;
 
             }, 1000);
         }
-
+sessionStorage.setItem('showThankYou', 'true');
         closeLeadModal();
         document.getElementById('leadForm').reset();
 
@@ -801,5 +801,147 @@ Please share the complete details and guide me further.`;
         console.error('Lead submission error:', error);
     }
 }
+  function showThankYouPage() {
+    const thankYouPage = document.getElementById('thankYouPage');
+    const mainContent = document.querySelector('main');
+
+    if (thankYouPage) {
+        if (mainContent) {
+            mainContent.classList.add('hidden');
+        }
+
+        thankYouPage.classList.remove('hidden');
+
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+}
+
+function showWebsiteHome() {
+    const thankYouPage = document.getElementById('thankYouPage');
+    const mainContent = document.querySelector('main');
+
+    if (thankYouPage) {
+        thankYouPage.classList.add('hidden');
+    }
+
+    if (mainContent) {
+        mainContent.classList.remove('hidden');
+    }
+
+    sessionStorage.removeItem('showThankYou');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+document.addEventListener('visibilitychange', function () {
+    if (
+        !document.hidden &&
+        sessionStorage.getItem('showThankYou') === 'true'
+    ) {
+        showThankYouPage();
+        sessionStorage.removeItem('showThankYou');
+    }
+});
     </script>
+<style>
+/* ===== THANK YOU PAGE ===== */
+.thankyou-card {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px 28px;
+    text-align: center;
+}
+
+.thankyou-icon {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4700af, #a700ac);
+    color: white;
+    font-size: 32px;
+    box-shadow: 0 10px 30px rgba(71, 0, 175, 0.25);
+}
+
+.community-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 14px 24px;
+    border-radius: 14px;
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    background: linear-gradient(90deg, #4700af, #a700ac);
+    box-shadow: 0 10px 25px rgba(71, 0, 175, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.community-btn:hover {
+    transform: translateY(-2px);
+}
+</style>
+  <section id="thankYouPage" class="hidden min-h-screen flex items-center justify-center px-6 py-20">
+
+    <div class="thankyou-card glass-panel rounded-3xl">
+
+        <div class="thankyou-icon">
+            ✓
+        </div>
+
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Thank You! 🎉
+        </h2>
+
+        <p class="text-lg opacity-80 mb-3">
+            Your details have been received successfully.
+        </p>
+
+        <p class="opacity-70 mb-6">
+            One important step is remaining.
+        </p>
+
+        <div class="text-left max-w-md mx-auto mb-6">
+            <p class="font-semibold mb-3 text-center">
+                Join our WhatsApp Community
+            </p>
+
+            <ul class="space-y-3 opacity-80">
+                <li>✓ Course-related updates</li>
+                <li>✓ Work-related information</li>
+                <li>✓ Webinar information</li>
+                <li>✓ Important announcements</li>
+            </ul>
+        </div>
+
+        <a
+            href="https://chat.whatsapp.com/ByclwgxdruWLvBM1VljKk2"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="community-btn"
+        >
+            Join WhatsApp Community
+        </a>
+
+        <button
+            onclick="showWebsiteHome()"
+            class="block mx-auto mt-5 text-sm opacity-70 hover:opacity-100"
+        >
+            ← Back to Website
+        </button>
+
+    </div>
+
+</section>
 </body></html>
